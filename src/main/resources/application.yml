@@ -1,0 +1,28 @@
+spring:
+  application:
+    name: ktv
+  datasource:
+    url: jdbc:postgresql://localhost:5432/ktv
+    username: postgres
+    password: postgres
+  jpa:
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+
+server:
+  port: 8000
+servlet:
+  multipart:
+    enabled: true
+    max-file-size: 2MB
+    max-request-size: 5MB
+security:
+  jwt:
+    expiration-minutes: 30
+    secret-key: dGhpcyBpcyBteSBzZWN1cmUga2V5IGFuZCB5b3UgY2Fubm90IGhhY2sgaXQ=
+  upload:
+    directory: uploads
