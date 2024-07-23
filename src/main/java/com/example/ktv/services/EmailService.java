@@ -26,6 +26,7 @@ public class EmailService {
 
 
     public void send(String to, String subject, String html) {
+        System.out.println("from email: "+from);
         MimeMessagePreparator message = mimeMessage -> {
             MimeMessageHelper helper = new MimeMessageHelper(mimeMessage, true, "UTF-8");
             helper.setFrom(from);
@@ -39,8 +40,10 @@ public class EmailService {
     public void sendVerifyCode(String email,String name,String verifyCode)throws IOException{
         String html;
         try {
+            System.out.println("Try to read html file");
             html = readEmailTemplate("email-activate-user.html");
         } catch (IOException e) {
+
             throw e;
         }
 
@@ -54,7 +57,17 @@ public class EmailService {
         send(email, subject, html);
     }
     private String readEmailTemplate(String filename) throws IOException {
-        File file = ResourceUtils.getFile("classpath:email/" + filename);
+        File file;
+        try {
+            System.out.println("Dev path; ");
+        file = ResourceUtils.getFile("classpath:email/" + filename);
+
+        }catch (IOException e){
+            System.out.println("Docker path: ");
+
+        file = ResourceUtils.getFile("/email/" + filename);
+        }
+        System.out.println(" Debug path: "+ file.getAbsolutePath());
         return FileCopyUtils.copyToString(new FileReader(file));
     }
 

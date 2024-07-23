@@ -8,11 +8,14 @@ services:
       dockerfile: Dockerfile
     ports:
       - "8000:8000"
+      - "587:587"
     environment:
       SPRING_DATASOURCE_URL: jdbc:postgresql://db:5432/ktv
       SPRING_DATASOURCE_USERNAME: postgres
       SPRING_DATASOURCE_PASSWORD: postgres
+      SPRING_MAIL_PORT: 587
       SPRING_PROFILES_ACTIVE: dev
+
     depends_on:
       - db
 

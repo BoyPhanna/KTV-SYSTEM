@@ -80,8 +80,10 @@ public class CustomerService {
         customer.setVerifyCode(passwordEncoder.encode(verifyCode.toString()));
 
         try {
+            System.out.println("Try to send verify code.");
             emailService.sendVerifyCode(customer.getEmail(),customer.getName(),verifyCode.toString());
         } catch (IOException e) {
+            System.out.println("Error send email: "+e.getMessage());
             throw CustomerException.verifyFailed();
         }
 
