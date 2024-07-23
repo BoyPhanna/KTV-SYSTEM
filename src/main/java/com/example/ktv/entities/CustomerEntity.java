@@ -22,8 +22,11 @@ public class CustomerEntity {
     private LocalDate dob;
     private String address;
     private String phone;
-    private String role="CUSTOMER";
+    private String role="CUSTOMER U";
+    private String email;
     private  String password;
+    private String imageURL;
+    private String verifyCode;
     @OneToMany(mappedBy = "customer",cascade = CascadeType.ALL)
     List<BookingEntity> bookings=new ArrayList<>();
     @OneToMany(mappedBy = "customer",cascade = CascadeType.ALL)
