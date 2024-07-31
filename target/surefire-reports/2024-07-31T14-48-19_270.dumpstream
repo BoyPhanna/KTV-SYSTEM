@@ -1,0 +1,5 @@
+# Created at 2024-07-31T14:48:19.506
+Boot Manifest-JAR contains absolute paths in classpath 'D:\RUPP\Spring Boot\ktv\target\test-classes'
+Hint: <argLine>-Djdk.net.URLClassPath.disableClassPathURLCheck=true</argLine>
+'other' has different root
+
