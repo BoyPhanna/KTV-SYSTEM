@@ -26,7 +26,7 @@ spring:
     show-sql: true
 
 server:
-  port: 8000
+  port: 8089
 servlet:
   multipart:
     enabled: true

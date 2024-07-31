@@ -7,7 +7,7 @@ services:
       context: .
       dockerfile: Dockerfile
     ports:
-      - "8000:8000"
+      - "8089:8089"
       - "587:587"
     environment:
       SPRING_DATASOURCE_URL: jdbc:postgresql://db:5432/ktv
@@ -28,7 +28,7 @@ services:
     volumes:
       - ./pgdata:/var/lib/postgresql/data
     ports:
-      - "5432:5432"
+      - "5832:5432"
 
   pgadmin:
     image: dpage/pgadmin4

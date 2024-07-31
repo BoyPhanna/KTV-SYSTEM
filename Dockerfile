@@ -11,7 +11,7 @@ COPY target/ktv-0.0.1-SNAPSHOT.jar app.jar
 COPY src/main/resources/email/email-activate-user.html /email/email-activate-user.html
 
 # Expose the port the application runs on
-EXPOSE 8000
+EXPOSE 8089
 EXPOSE 587
 # Run the application
 ENTRYPOINT ["java", "-jar", "app.jar"]
